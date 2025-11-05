@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio - Making Websites Come Alive</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#demo" class="nav-link">Demo</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h1 class="hero-title">Making Websites Come Alive</h1>
+            <p class="hero-subtitle">I create interactive web experiences that captivate, engage, and convert.</p>
+            <button class="btn btn--primary btn--lg cta-button">See What I Can Do</button>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">What I Can Do For You</h2>
+            <div class="services-grid" id="services-grid">
+                <!-- Services will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills Showcase</h2>
+            <div class="skills-container">
+                <div class="skills-cube-container">
+                    <canvas id="skills-canvas"></canvas>
+                </div>
+                <div class="skills-info">
+                    <h3>Interactive Technology Showcase</h3>
+                    <p>Hover over the cube to explore different technologies and see them in action.</p>
+                    <div class="tech-list" id="tech-list">
+                        <!-- Technology list will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Demos</h2>
+            <div class="demo-grid">
+                <div class="demo-card">
+                    <h3>Particle System</h3>
+                    <canvas id="particle-canvas" class="demo-canvas"></canvas>
+                </div>
+                <div class="demo-card">
+                    <h3>Animated Buttons</h3>
+                    <div class="button-showcase">
+                        <button class="demo-btn pulse-btn">Pulse Effect</button>
+                        <button class="demo-btn glow-btn">Glow Effect</button>
+                        <button class="demo-btn morph-btn">Morph Effect</button>
+                    </div>
+                </div>
+                <div class="demo-card">
+                    <h3>Color Morphing</h3>
+                    <div class="color-demo" id="color-demo">
+                        <div class="morphing-shape"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <canvas id="contact-canvas"></canvas>
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Create Something Amazing</h3>
+                    <p>Ready to bring your ideas to life? Let's discuss your next project.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" target="http://github.com/person-X112">
+                            <span class="social-icon">📱</span>
+                            GitHub
+                        </a>
+                        <a href="#" class="social-link" target="https://www.linkedin.com/in/mohammed-zaid-malkani-38a420175/">
+                            <span class="social-icon">💼</span>
+                            LinkedIn
+                        </a>
+                        <a href="#" class="social-link" target="https://x.com/MalkaniZaid">
+                            <span class="social-icon">🐦</span>
+                            Twitter
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+    <input type="hidden" name="access_key" value="887031f9-d275-4693-9efe-b5f02b0bdb60">  <!-- Paste your key here -->
+    <div class="form-group">
+        <label class="form-label">Name</label>
+        <input type="text" name="name" class="form-control floating-input" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-control floating-input" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea name="message" class="form-control floating-input" rows="5" required></textarea>
+    </div>
+    <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+</form>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
