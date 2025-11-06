@@ -599,7 +599,7 @@ function initContactForm() {
 
     // Basic validation
     let isValid = true;
-    if (!data.name || !data.email || !data.message) {
+    if (!data.name || !data.email || !data.message || !data.phone) {
       isValid = false;
     }
     // Optional: Email regex check
@@ -649,4 +649,5 @@ function initContactForm() {
   }, 3000);
 }
   });
+
 }
