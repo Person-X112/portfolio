@@ -2,33 +2,33 @@
 const appData = {
   services: [
     {
-      title: "Turn Your Ideas Into Interactive Experiences",
-      description: "Transform static concepts into engaging, interactive web applications that captivate users and drive results.",
+      title: "Bespoke Web Solutions",
+      description: "Translating complex business requirements into high-conversion digital products. I don't just build websites; I engineer interactive journeys that turn visitors into lifelong customers.",
       icon: "✨"
     },
     {
-      title: "Build Modern Web Applications That Users Love",
-      description: "Create responsive, fast, and beautiful applications using the latest technologies and best practices.",
+      title: "Full-Stack Application Engineering",
+      description: "Architecting scalable, future-proof applications from the ground up. Utilizing modern frameworks to ensure your platform is as robust under the hood as it is beautiful on the surface.",
       icon: "⚡"
     },
     {
-      title: "Create Stunning 3D Visuals and Animations",
-      description: "Bring your website to life with Three.js animations, WebGL effects, and immersive 3D experiences.",
+      title: "Immersive 3D & Creative Coding",
+      description: "Breaking the grid with WebGL and Three.js. I specialize in adding a new dimension to the web through interactive 3D models and cinematic animations that leave a lasting impression.",
       icon: "🎨"
     },
     {
-      title: "Develop Responsive Sites That Work Everywhere",
-      description: "Ensure your website looks and functions perfectly on every device, from mobile to desktop.",
+      title: "Adaptive Multi-Platform Design",
+      description: "Uncompromising performance across every screen size. I ensure a seamless, pixel-perfect experience whether your users are on a flagship mobile device or a high-resolution desktop.",
       icon: "📱"
     },
     {
-      title: "Optimize Performance For Lightning-Fast Loading",
-      description: "Deliver blazing-fast websites that keep users engaged and improve search engine rankings.",
+      title: "Performance & Core Web Vitals Optimization",
+      description: "Speed is a competitive advantage. I meticulously optimize codebases to achieve perfect Lighthouse scores, reducing bounce rates and boosting your search engine visibility.",
       icon: "🚀"
     },
     {
-      title: "Integrate Cutting-Edge Technologies",
-      description: "Leverage React, Three.js, WebGL, and modern APIs to create next-generation web experiences.",
+      title: "Modern Tech Stack Integration",
+      description: "Leveraging the power of React, Framer Motion, and next-gen APIs to build fast, secure, and maintainable systems that evolve alongside your business.",
       icon: "⚙️"
     }
   ],
@@ -324,86 +324,193 @@ function initContactScene() {
 }
 
 // Particle System for Demo
+// function initParticleSystem() {
+//   const canvas = document.getElementById('particle-canvas');
+//   const scene = new THREE.Scene();
+//   const camera = new THREE.PerspectiveCamera(75, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
+//   const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+  
+//   renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
+//   renderer.setClearColor(0x0a0a0a);
+  
+//   // Create particle system
+//   const particleGeometry = new THREE.BufferGeometry();
+//   const particleCount = 200;
+//   const positions = new Float32Array(particleCount * 3);
+//   const colors = new Float32Array(particleCount * 3);
+  
+//   for (let i = 0; i < particleCount; i++) {
+//     positions[i * 3] = (Math.random() - 0.5) * 10;
+//     positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
+//     positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+    
+//     colors[i * 3] = Math.random();
+//     colors[i * 3 + 1] = Math.random();
+//     colors[i * 3 + 2] = Math.random();
+//   }
+  
+//   particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+//   particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+  
+//   const particleMaterial = new THREE.PointsMaterial({
+//     size: 0.1,
+//     vertexColors: true,
+//     transparent: true,
+//     opacity: 0.8
+//   });
+  
+//   particles = new THREE.Points(particleGeometry, particleMaterial);
+//   scene.add(particles);
+  
+//   camera.position.z = 5;
+  
+//   // Mouse interaction
+//   let mouse = { x: 0, y: 0 };
+//   canvas.addEventListener('mousemove', (event) => {
+//     const rect = canvas.getBoundingClientRect();
+//     mouse.x = (event.clientX - rect.left) / rect.width * 2 - 1;
+//     mouse.y = -(event.clientY - rect.top) / rect.height * 2 + 1;
+//   });
+  
+//   // Animation loop
+//   function animateParticles() {
+//     requestAnimationFrame(animateParticles);
+    
+//     const positions = particles.geometry.attributes.position.array;
+//     const colors = particles.geometry.attributes.color.array;
+    
+//     for (let i = 0; i < positions.length; i += 3) {
+//       // Attract particles to mouse
+//       const dx = mouse.x * 5 - positions[i];
+//       const dy = mouse.y * 5 - positions[i + 1];
+      
+//       positions[i] += dx * 0.02;
+//       positions[i + 1] += dy * 0.02;
+//       positions[i + 2] += Math.sin(Date.now() * 0.001 + i) * 0.01;
+      
+//       // Update colors
+//       colors[i] = Math.sin(Date.now() * 0.005 + i) * 0.5 + 0.5;
+//       colors[i + 1] = Math.sin(Date.now() * 0.003 + i + 2) * 0.5 + 0.5;
+//       colors[i + 2] = Math.sin(Date.now() * 0.007 + i + 4) * 0.5 + 0.5;
+//     }
+    
+//     particles.geometry.attributes.position.needsUpdate = true;
+//     particles.geometry.attributes.color.needsUpdate = true;
+    
+//     particles.rotation.y += 0.005;
+    
+//     renderer.render(scene, camera);
+//   }
+  
+//   animateParticles();
+  
+//   particleScene = scene;
+//   particleRenderer = renderer;
+//   particleCamera = camera;
+// }
 function initParticleSystem() {
   const canvas = document.getElementById('particle-canvas');
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
-  
   renderer.setSize(canvas.offsetWidth, canvas.offsetHeight);
   renderer.setClearColor(0x0a0a0a);
-  
+
   // Create particle system
   const particleGeometry = new THREE.BufferGeometry();
   const particleCount = 200;
   const positions = new Float32Array(particleCount * 3);
   const colors = new Float32Array(particleCount * 3);
-  
+  const thetas = new Float32Array(particleCount);
+  const phis = new Float32Array(particleCount);
+  const rs = new Float32Array(particleCount);
+  const speeds = new Float32Array(particleCount);
+
   for (let i = 0; i < particleCount; i++) {
     positions[i * 3] = (Math.random() - 0.5) * 10;
     positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
     positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
-    
+
     colors[i * 3] = Math.random();
     colors[i * 3 + 1] = Math.random();
     colors[i * 3 + 2] = Math.random();
+
+    thetas[i] = Math.random() * 2 * Math.PI;
+    phis[i] = Math.acos(2 * Math.random() - 1); // Uniform distribution on sphere
+    rs[i] = 0.5 + Math.random() * 1.5; // Random radius between 0.5 and 2
+    speeds[i] = (0.5 + Math.random()) * 0.1; // Random orbital speed
   }
-  
+
   particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-  
+
   const particleMaterial = new THREE.PointsMaterial({
     size: 0.1,
     vertexColors: true,
     transparent: true,
     opacity: 0.8
   });
-  
+
   particles = new THREE.Points(particleGeometry, particleMaterial);
   scene.add(particles);
-  
+
   camera.position.z = 5;
-  
+
   // Mouse interaction
   let mouse = { x: 0, y: 0 };
-  canvas.addEventListener('mousemove', (event) => {
+  document.addEventListener('mousemove', (event) => {
     const rect = canvas.getBoundingClientRect();
-    mouse.x = (event.clientX - rect.left) / rect.width * 2 - 1;
-    mouse.y = -(event.clientY - rect.top) / rect.height * 2 + 1;
+    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
   });
-  
+
   // Animation loop
   function animateParticles() {
     requestAnimationFrame(animateParticles);
-    
+
     const positions = particles.geometry.attributes.position.array;
     const colors = particles.geometry.attributes.color.array;
-    
-    for (let i = 0; i < positions.length; i += 3) {
-      // Attract particles to mouse
-      const dx = mouse.x * 5 - positions[i];
-      const dy = mouse.y * 5 - positions[i + 1];
-      
-      positions[i] += dx * 0.02;
-      positions[i + 1] += dy * 0.02;
-      positions[i + 2] += Math.sin(Date.now() * 0.001 + i) * 0.01;
-      
+
+    let attract_x = mouse.x * 5;
+    let attract_y = mouse.y * 5;
+    let attract_z = 0; // Keep cluster centered in Z for simplicity
+
+    // Clamp attraction point to handle mouse outside the frame
+    attract_x = Math.max(-5, Math.min(5, attract_x));
+    attract_y = Math.max(-5, Math.min(5, attract_y));
+
+    for (let i = 0; i < particleCount; i++) {
+      thetas[i] += speeds[i] * 0.01; // Update orbital angle
+
+      const target_x = attract_x + rs[i] * Math.sin(phis[i]) * Math.cos(thetas[i]);
+      const target_y = attract_y + rs[i] * Math.sin(phis[i]) * Math.sin(thetas[i]);
+      const target_z = attract_z + rs[i] * Math.cos(phis[i]);
+
+      const idx = i * 3;
+      const dx = target_x - positions[idx];
+      const dy = target_y - positions[idx + 1];
+      const dz = target_z - positions[idx + 2];
+
+      positions[idx] += dx * 0.05;
+      positions[idx + 1] += dy * 0.05;
+      positions[idx + 2] += dz * 0.05;
+
       // Update colors
-      colors[i] = Math.sin(Date.now() * 0.005 + i) * 0.5 + 0.5;
-      colors[i + 1] = Math.sin(Date.now() * 0.003 + i + 2) * 0.5 + 0.5;
-      colors[i + 2] = Math.sin(Date.now() * 0.007 + i + 4) * 0.5 + 0.5;
+      colors[idx] = Math.sin(Date.now() * 0.005 + i) * 0.5 + 0.5;
+      colors[idx + 1] = Math.sin(Date.now() * 0.003 + i + 2) * 0.5 + 0.5;
+      colors[idx + 2] = Math.sin(Date.now() * 0.007 + i + 4) * 0.5 + 0.5;
     }
-    
+
     particles.geometry.attributes.position.needsUpdate = true;
     particles.geometry.attributes.color.needsUpdate = true;
-    
-    particles.rotation.y += 0.005;
-    
+
+    // Optional: particles.rotation.y += 0.005; // Removed to avoid extra rotation; re-add if you want the whole cluster to spin
+
     renderer.render(scene, camera);
   }
-  
+
   animateParticles();
-  
+
   particleScene = scene;
   particleRenderer = renderer;
   particleCamera = camera;
